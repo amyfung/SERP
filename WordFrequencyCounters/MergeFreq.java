@@ -8,8 +8,7 @@ import java.util.*;
 */
 
 
-public class MergeFreq
-{
+public class MergeFreq {
 
 	Hashtable<String,Integer> map = new Hashtable<String,Integer>();
 	

@@ -1,3 +1,37 @@
 Run #,Runtime,Command
-1,java SequentialFreq book.txt text1.txt,0:00:01.348496
-2,java SequentialFreq book.txt text1.txt,0:00:00.885381
+1,0:00:01.858963,java ByFirstLetterFreq book.txt text1.txt
+2,0:00:02.347950,java ByFirstLetterFreq book.txt text1.txt
+3,0:00:01.131907,java ByFirstLetterFreq book.txt text1.txt
+1,0:00:00.930689,java ByFirstLetterFreq book.txt text1.txt
+2,0:00:01.304508,java ByFirstLetterFreq book.txt text1.txt
+3,0:00:00.933753,java ByFirstLetterFreq book.txt text1.txt
+1,0:00:00.314859,java ByFirstLetterFreq text1.txt
+2,0:00:00.276453,java ByFirstLetterFreq text1.txt
+3,0:00:00.255344,java ByFirstLetterFreq text1.txt
+1,0:00:00.220309,java MergeFreq text1.txt
+2,0:00:00.265233,java MergeFreq text1.txt
+3,0:00:00.224252,java MergeFreq text1.txt
+1,0:00:00.196227,java MergeFreq text1.txt
+2,0:00:00.225940,java MergeFreq text1.txt
+3,0:00:00.223041,java MergeFreq text1.txt
+1,0:00:00.289562,java ByFirstLetterFreq text1.txt
+2,0:00:00.234345,java ByFirstLetterFreq text1.txt
+3,0:00:00.237571,java ByFirstLetterFreq text1.txt
+1,0:00:00.210480,java ByFirstLetterFreq text1.txt
+2,0:00:00.240123,java ByFirstLetterFreq text1.txt
+3,0:00:00.237613,java ByFirstLetterFreq text1.txt
+1,0:00:00.215886,java ByFirstLetterFreq text1.txt
+2,0:00:00.218832,java ByFirstLetterFreq text1.txt
+3,0:00:00.204015,java ByFirstLetterFreq text1.txt
+1,0:00:00.224732,java ByFirstLetterFreq text1.txt
+2,0:00:00.205671,java ByFirstLetterFreq text1.txt
+3,0:00:00.203068,java ByFirstLetterFreq text1.txt
+1,0:00:00.213318,java ByFirstLetterFreq text1.txt
+2,0:00:00.233510,java ByFirstLetterFreq text1.txt
+3,0:00:00.260846,java ByFirstLetterFreq text1.txt
+1,0:00:00.246485,java ByFirstLetterFreq text1.txt
+2,0:00:00.213112,java ByFirstLetterFreq text1.txt
+3,0:00:00.194292,java ByFirstLetterFreq text1.txt
+1,0:00:00.198392,java ByFirstLetterFreq text1.txt
+2,0:00:00.217870,java ByFirstLetterFreq text1.txt
+3,0:00:00.204877,java ByFirstLetterFreq text1.txt
