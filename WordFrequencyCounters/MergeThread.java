@@ -1,9 +1,9 @@
 
-public class MergeFreqThread extends java.lang.Thread{
+public class MergeThread extends java.lang.Thread{
     String filename;
     MergeFreq table;
 
-    public MergeFreqThread(String filename) { 
+    public MergeThread(String filename) { 
         this.filename = filename;
         table = new MergeFreq();
     }

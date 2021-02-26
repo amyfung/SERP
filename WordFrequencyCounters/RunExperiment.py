@@ -43,4 +43,4 @@ def runJava(javaCmd, numRuns, printWords, fileName, newFile):
     csvFile.close()
 
 if __name__ == "__main__":
-    runJava("java ByFirstLetterFreq text1.txt", 3, True, "testFile.csv", False)
+    runJava("java MergeFreq TextFiles/text1.txt", 3, True, "testFile.csv", False)

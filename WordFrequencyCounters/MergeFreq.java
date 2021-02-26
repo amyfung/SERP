@@ -78,11 +78,11 @@ public class MergeFreq {
 		//creating an instance of the NewWordFreq class
 		MergeFreq mainTable = new MergeFreq(); 
 		//creating an array of threads
-		MergeFreqThread[] firstTable = new MergeFreqThread[args.length];
+		MergeThread[] firstTable = new MergeThread[args.length];
 		//each thread corresponds to a file in args
 		for(int i = 0 ; i < args.length ; i++){
 			//for each index in args creating an instance of CountingThread2
-			MergeFreqThread first = new MergeFreqThread(args[i]);
+			MergeThread first = new MergeThread(args[i]);
 			//inserting a thread in the array of threads
 			firstTable[i] = first;
 			//running a thread
@@ -90,7 +90,7 @@ public class MergeFreq {
 			
 		}
 		
-		for(MergeFreqThread t : firstTable){
+		for(MergeThread t : firstTable){
 			try{
 				//holds the execution of the thread currently running until it's finished
 				//next thread won't be executed, unless the first one is finished
