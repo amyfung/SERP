@@ -2,8 +2,7 @@ import java.io.*;
 import java.util.*;
 
 
-public class SequentialFreq
-{
+public class SequentialFreq {
 
     Hashtable<String,Integer> map = new Hashtable<String,Integer>();
     

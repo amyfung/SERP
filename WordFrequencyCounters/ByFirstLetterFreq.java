@@ -73,18 +73,18 @@ public class ByFirstLetterFreq {
 		// creating an instance of the ByFirstLetterFreq class
 		ByFirstLetterFreq arrOfHash = new ByFirstLetterFreq();
 		// creating an array of threads
-		CountingThread3[] firstTable = new CountingThread3[args.length];
+		ByFirstLetterThread[] firstTable = new ByFirstLetterThread[args.length];
 		// each thread corresponds to a file in args
 		for (int i = 0; i < args.length; i++) {
 			// for each index in args creating an instance of CountingThread3
-			CountingThread3 first = new CountingThread3(args[i], arrOfHash);
+			ByFirstLetterThread first = new ByFirstLetterThread(args[i], arrOfHash);
 			// inserting a thread in the array of threads
 			firstTable[i] = first;
 			// running a thread
 			first.start();
 		}
 
-		for (CountingThread3 t : firstTable) {
+		for (ByFirstLetterThread t : firstTable) {
 			try {
 				// holds the execution of the thread currently running until it's finished
 				// next thread won't be executed, unless the first one is finished

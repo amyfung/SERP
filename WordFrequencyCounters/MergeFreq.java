@@ -14,9 +14,9 @@ public class MergeFreq {
 	
 	//open the file and populate the map with words and their counts
 	//preventing multiple threads from executing the same code at one time
-	public void  count(String filename) {
+	public void count(String fileName) {
 		
-		File f = new File(filename); 
+		File f = new File(fileName); 
 		Scanner sc = null;
 		try {
 		  sc = new Scanner(f);
@@ -72,17 +72,17 @@ public class MergeFreq {
 	public static void main(String[] args) {
 		//checking if args has at least one file
 		if (args.length < 1) {
-			System.out.println("usage: WordFreq <filename>");
+			System.out.println("usage: WordFreq <fileName>");
 			System.exit(1);
 		}
 		//creating an instance of the NewWordFreq class
 		MergeFreq mainTable = new MergeFreq(); 
 		//creating an array of threads
-		CountingThread2[] firstTable = new CountingThread2[args.length];
+		MergeFreqThread[] firstTable = new MergeFreqThread[args.length];
 		//each thread corresponds to a file in args
 		for(int i = 0 ; i < args.length ; i++){
 			//for each index in args creating an instance of CountingThread2
-			CountingThread2 first = new CountingThread2(args[i]);
+			MergeFreqThread first = new MergeFreqThread(args[i]);
 			//inserting a thread in the array of threads
 			firstTable[i] = first;
 			//running a thread
@@ -90,7 +90,7 @@ public class MergeFreq {
 			
 		}
 		
-		for(CountingThread2 t : firstTable){
+		for(MergeFreqThread t : firstTable){
 			try{
 				//holds the execution of the thread currently running until it's finished
 				//next thread won't be executed, unless the first one is finished

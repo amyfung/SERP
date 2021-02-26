@@ -1,9 +1,9 @@
 
-public class CountingThread1 extends java.lang.Thread{
+public class BasicThread extends java.lang.Thread{
     String filename;
     BasicThreadedFreq table;
 
-    CountingThread1(String filename, BasicThreadedFreq table) { 
+    BasicThread(String filename, BasicThreadedFreq table) { 
         this.filename = filename; 
         this.table = table;
     }

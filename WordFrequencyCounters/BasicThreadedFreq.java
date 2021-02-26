@@ -56,11 +56,11 @@ public class BasicThreadedFreq {
         //creating an instance of the NewWordFreq class
         BasicThreadedFreq table = new BasicThreadedFreq(); 
         //creating an array of threads
-        CountingThread1[] firstTable = new CountingThread1[args.length];
+        BasicThread[] firstTable = new BasicThread[args.length];
         //each thread corresponds to a file in args
         for(int i = 0 ; i < args.length ; i++){
             //for each index in args creating an instance of CountingThread
-            CountingThread1 first = new CountingThread1(args[i], table);
+            BasicThread first = new BasicThread(args[i], table);
             //inserting a thread in the array of threads
             firstTable[i] = first;
             //running a thread
@@ -68,7 +68,7 @@ public class BasicThreadedFreq {
             
         }
         
-        for(CountingThread1 t : firstTable){
+        for(BasicThread t : firstTable){
             try{
                 //holds the execution of the thread currently running until it's finished
                 //next thread won't be executed, unless the first one is finished
