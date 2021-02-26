@@ -12,6 +12,10 @@ def runJava(javaCmd, numRuns, printWords, fileName):
         numRuns (Integer): Number of experiments to run
         printWords (Boolean): Whether or not the word frequencies should be printed
     """
+    with open(fileName, "w") as csvFile:
+        writer = csv.writer(csvFile)
+        writer.writerow(["Run #", "Runtime", "Command"])
+
     for i in range(1, numRuns + 1):
         start = datetime.now()
         result = subprocess.run([javaCmd], shell = True, stdout = subprocess.PIPE, universal_newlines=True)
@@ -19,9 +23,15 @@ def runJava(javaCmd, numRuns, printWords, fileName):
             print(result.stdout)
             print()
         time = datetime.now()-start
+
+        with open(fileName, "a") as csvFile:  
+            writer = csv.writer(csvFile)
+            writer.writerow([i, time, javaCmd])
+        
         print("Run", i, ":", time)
         print()
 
+    csvFile.close()
 
 if __name__ == "__main__":
-    runJava("java SequentialFreq book.txt text1.txt", 2, True)
+    runJava("java SequentialFreq book.txt text1.txt", 2, True, "testFile.csv")
