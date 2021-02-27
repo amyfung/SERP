@@ -7,14 +7,14 @@ public class SequentialFreq {
     Hashtable<String,Integer> map = new Hashtable<String,Integer>();
     
     //open the file and populate the map with words and their counts
-    public void  count(String filename) {
+    public void count(String fileName) {
         
-        File f = new File(filename); 
+        File f = new File(fileName); 
         Scanner sc = null;
         try {
           sc = new Scanner(f);
         } catch (FileNotFoundException e) {
-            System.out.println("cannot open scanner");
+            System.out.println("Cannot open scanner");
             System.exit(1);
         };
         
