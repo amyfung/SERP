@@ -20,12 +20,16 @@ public class BoundedBuffer {
        */
     public synchronized void produce(String word) throws InterruptedException {
       //synchronized(buffer){
+         System.out.println("P: Trying to produce " + word);
          while (buffer.size() == numSlots) {
+            System.out.println("P: Buffer full");
             wait();
-            System.out.println("Producer got notification from consumer");
+            System.out.println("P: Producer got notification from consumer");
          }
          buffer.add(word);
+         System.out.println("P: Added " + word + " to buffer");
          notifyAll();
+         System.out.println("P: Producer is notifying");
       //} 
     }
  
@@ -35,13 +39,18 @@ public class BoundedBuffer {
        * @throws InterruptedException
        */
     public synchronized String consume() throws InterruptedException {
-      notifyAll();
-      while (buffer.size() == 0 || !readingFinished) {
+      System.out.println("C: About to consume");
+      //notifyAll();
+      while (buffer.size() == 0) {
+         System.out.println("C: Buffer empty");
          wait();
+         System.out.println("C: Done waiting");
       }
        
       String word = buffer.get(0);
       buffer.remove(word);
+      notifyAll();
+      System.out.println("C: About to return " + word);
       return word;
     }
  }

@@ -20,12 +20,16 @@ public class Consumer extends Thread{
 	 */
 	public void run() {
 		try {
-			//while (true) {
+			while (true) {
+				System.out.println("C: About to consume");
 				String word = buffer.consume();
+				if (word == null){
+					System.out.println("C: Done consuming");
+					return;
+				}
+				System.out.println("C: Consumed: " + word);
 				table.count(word);
-                int waitTime = 100 + generator.nextInt(200);
-                sleep(waitTime);
-			//}
+			} 
 		} catch(InterruptedException e) {
 
 		}
